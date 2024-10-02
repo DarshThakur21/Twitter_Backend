@@ -1,4 +1,4 @@
-package com.Twitter_Clone.twitterc.service;
+package com.Twitter_Clone.twitterc.service.impl;
 
 import com.Twitter_Clone.twitterc.model.User;
 import com.Twitter_Clone.twitterc.repository.UserRepository;

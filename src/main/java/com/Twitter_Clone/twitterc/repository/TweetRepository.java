@@ -5,9 +5,12 @@ import com.Twitter_Clone.twitterc.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+@Repository
 public interface TweetRepository  extends JpaRepository<Tweet,Long> {
 
     //this will help detecting whether the tweet is replied as comment or is stand along tweet
@@ -27,7 +30,7 @@ public interface TweetRepository  extends JpaRepository<Tweet,Long> {
 //    it will give the list of tweets a particular user have liked
     List<Tweet> findByLikesContainingOrderByCreatedAtDesc(User user);
 
-    @Query("SELECT t FROM TWEET t JOIN t.likes l WHERE l.user.id=:userId")
+    @Query("SELECT t FROM Tweet t JOIN t.likes l WHERE l.user.id=:userId")
     List<Tweet> findByLikesUser_id( Long userId);
 
 }

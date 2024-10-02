@@ -1,13 +1,11 @@
 package com.Twitter_Clone.twitterc.controller;
 
 import com.Twitter_Clone.twitterc.config.JwtProvider;
-import com.Twitter_Clone.twitterc.exception.UserException;
 import com.Twitter_Clone.twitterc.model.User;
 import com.Twitter_Clone.twitterc.model.Varification;
 import com.Twitter_Clone.twitterc.repository.UserRepository;
 import com.Twitter_Clone.twitterc.response.AuthResponse;
-import com.Twitter_Clone.twitterc.service.CustomUserDetailServiceImplementation;
-import jdk.jshell.spi.ExecutionControl;
+import com.Twitter_Clone.twitterc.service.impl.CustomUserDetailServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
