@@ -29,7 +29,7 @@ public class AppConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless session for API
                 .authorizeHttpRequests(Authorize ->
-                        Authorize
+                        Authorize.requestMatchers("/auth/signup", "/auth/signin").permitAll()
                                 .requestMatchers("/api/**").authenticated()  // Secure API routes
                                 .anyRequest().permitAll()                    // Allow other routes
                 ).addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
